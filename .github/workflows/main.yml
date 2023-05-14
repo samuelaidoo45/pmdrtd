@@ -50,7 +50,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy to cPanel
-        uses: mohsen1/cpanel-deploy@v1
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           host: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USERNAME }}
