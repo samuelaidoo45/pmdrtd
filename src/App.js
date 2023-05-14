@@ -2,7 +2,6 @@ import Home from "./pages/home/Home";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Login from "./pages/login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useContext } from "react";
 
 function App() {
 
