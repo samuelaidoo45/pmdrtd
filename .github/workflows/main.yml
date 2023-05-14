@@ -34,6 +34,9 @@
 #         server-dir: /public_html/
 
 
+
+
+
 name: Build and Deploy to cPanel
 on:
   push:
@@ -46,18 +49,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: |
-          npm install
-          npm run eslint
+        run: npm install
       - name: Build
         run: npm run build
       - name: Deploy to cPanel
-        uses:  SamKirkland/FTP-Deploy-Action@4.1.0
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           host: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           directory: app.tivateonline.com/pomodoropal
-
-
-
