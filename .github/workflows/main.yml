@@ -1,34 +1,58 @@
+# on:
+#   push:
+#     branches: [ test ] 
+# name: 🚀 PomodoroPal - Deployment
+
+# jobs:
+
+#   web-deploy:
+
+#     name: 🎉 PomodoroPal - Deployment
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+
+#     - name: 🚚 Get latest code
+
+#       uses: actions/checkout@v2
+    
+#     - name: Sync files
+
+#       uses: SamKirkland/FTP-Deploy-Action@4.1.0
+
+#       with:
+
+#         server: 
+
+#         username: 
+
+#         password: 
+
+#         protocol: ftp
+        
+#         server-dir: /public_html/
+
+
+name: Build and Deploy to cPanel
 on:
   push:
-    branches: [ test ] 
-name: 🚀 PomodoroPal - Deployment
-
+    branches:
+      - main
 jobs:
-
-  web-deploy:
-
-    name: 🎉 PomodoroPal - Deployment
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-
-    - name: 🚚 Get latest code
-
-      uses: actions/checkout@v2
-    
-    - name: Sync files
-
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-
-      with:
-
-        server: 
-
-        username: 
-
-        password: 
-
-        protocol: ftp
-        
-        server-dir: /public_html/
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy to cPanel
+        uses: mohsen1/cpanel-deploy@v1
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          directory: app.tivateonline.com/pomodoropal
