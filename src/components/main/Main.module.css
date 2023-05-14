@@ -12,21 +12,21 @@ body {
     color: #1B1E2D;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: bold;
 }
 
-a {
+.a {
     color: #1B1E2D;
     text-decoration: none;
 }
 
-a:hover {
+.a:hover {
     color: #FF6978;
 }
 
 /* Navigation styles */
-nav {
+.nav {
     background-color: #1B1E2D;
     height: 100vh;
     width: 300px;
@@ -39,31 +39,31 @@ nav {
     padding: 40px;
 }
 
-nav ul {
+.nav .ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-nav ul li a {
+.nav .ul .li .a {
     font-size: 24px;
     font-weight: bold;
     transition: color 0.2s ease-in-out;
 }
 
-nav ul li a:hover {
+.nav .ul .li .a:hover {
     color: #FF6978;
 }
 
 /* Main content styles */
-main {
+.main {
     margin-left: 300px;
     padding: 40px;
 }
 
 /* Button styles */
-button {
+.button {
     background-color: #FF6978;
     color: #F5F5F5;
     border: none;
@@ -74,18 +74,18 @@ button {
     transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
+.button:hover {
     background-color: #F44336;
 }
 
 /* Form styles */
-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-label {
+.label {
     font-size: 20px;
     font-weight: bold;
 }
@@ -150,15 +150,15 @@ input[type="text"]:focus, textarea:focus {
     color: #1B1E2D;
 }
 
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px; /* Change the font size to a smaller value */
+    font-size: 14px; Change the font size to a smaller value
     color: #1B1E2D;
-}
+} */
 
 
 
-nav ul li a {
+.nav .ul .li .a {
     font-size: 18px;
     font-weight: bold;
     color: #F5F5F5;
@@ -167,8 +167,8 @@ nav ul li a {
     transition: color 0.2s ease-in-out;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+.nav .ul .li .a:hover,
+.nav .ul .li .a.active {
     color: #FF6978;
 }
 
@@ -181,7 +181,7 @@ body {
 }
 
 /* Navigation styles */
-nav {
+.nav {
     background-color: #1B1E2D;
     height: 100vh;
     width: 300px;
@@ -194,14 +194,14 @@ nav {
     padding: 40px;
 }
 
-nav ul {
+.nav .ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-nav ul li a {
+.nav .ul .li .a {
     font-size: 18px;
     font-weight: bold;
     color: #F5F5F5;
@@ -210,33 +210,33 @@ nav ul li a {
     transition: color 0.2s ease-in-out;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+.nav .ul .li .a:hover,
+.nav .ul .li .a.active {
     color: #FF6978;
 }
 
 /* Main content styles */
-main {
+.main {
     margin-left: 300px;
     padding: 40px;
 }
 
-h1 {
+.h1 {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
-form {
+.form {
     margin-bottom: 20px;
 }
 
-label {
+.label {
     font-size: 20px;
     font-weight: bold;
 }
 
-select {
+.select {
     font-size: 16px;
     padding: 10px;
     border-radius: 4px;
@@ -244,7 +244,7 @@ select {
     margin-left: 10px;
 }
 
-button {
+.button {
     background-color: #FF6978;
     color: #F5F5F5;
     border: none;
@@ -255,17 +255,17 @@ button {
     transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
+.button:hover {
     background-color: #F44336;
 }
 
-ul {
+.ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+.li {
     border: 2px solid #F5F5F5;
     border-radius: 4px;
     padding: 20px;
@@ -274,13 +274,15 @@ li {
     justify-content: space-between;
 }
 
-li h2 {
+.li .h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #6E7191;
+
 }
 
-li p {
+.li .p {
     font-size: 16px;
     color: #6E7191;
     margin-bottom: 10px;
@@ -295,7 +297,7 @@ li p {
     letter-spacing: 1px;
 }
 
-.not-started {
+.notStarted {
     background-color: #F5F5F5;
     color: #6E7191;
 }
