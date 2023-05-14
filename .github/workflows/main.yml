@@ -47,11 +47,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: |
           npm install
           CI=false npm run build
+      - name: Remove non-build files
+        run: |
+          rm -rf !(build)
       - name: Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
