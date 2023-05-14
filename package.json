@@ -1,5 +1,6 @@
 {
   "name": "login_system",
+  "homepage": "https://app.tivateonline.com/pomodoropal/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
