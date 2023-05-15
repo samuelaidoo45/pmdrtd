@@ -14,15 +14,15 @@ const LandingPage = () => {
                     <p>Boost Your Productivity</p>
                 </div>
                 <nav className="header-right">
-  <ul>
-    {/* <li><a href="#">Home</a></li> */}
-    {/* <li><a href="http://127.0.0.1:3000/home">Login</a></li> */}
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/login">Login</Link></li>
-    {/* <li><a href="#">About</a></li> */}
-    {/* <li><a href="#">Contact</a></li> */}
-  </ul>
-</nav>
+                <ul>
+                    {/* <li><a href="#">Home</a></li> */}
+                    {/* <li><a href="http://127.0.0.1:3000/home">Login</a></li> */}
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/login">Login</Link></li>
+                    {/* <li><a href="#">About</a></li> */}
+                    {/* <li><a href="#">Contact</a></li> */}
+                </ul>
+                </nav>
             </header>
 
             <section className="hero">
