@@ -111,7 +111,6 @@ const LandingPage = () => {
 
                     <div>
                       {/* <link >Get Started</link> */}
-
                     </div>
                 </section>
             </main>
