@@ -19,6 +19,8 @@ const LandingPage = () => {
                     {/* <li><a href="http://127.0.0.1:3000/home">Login</a></li> */}
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/">Contact</Link></li>
                     {/* <li><a href="#">About</a></li> */}
                     {/* <li><a href="#">Contact</a></li> */}
                 </ul>
@@ -29,6 +31,8 @@ const LandingPage = () => {
                 <h1>Boost Your Productivity with PomodoroPal</h1>
                 <p>A simple yet powerful productivity tool that helps you stay focused and get things done more efficiently.</p>
                 {/* <a href="#" class="cta-button">Get Started</a> */}
+                                <link to='/' className="ctaButton">Get Started</link>
+
                 <div>
                 {/* <link className="">Get Started</link> */}
 
@@ -103,6 +107,8 @@ const LandingPage = () => {
                     <h2>Ready to Boost Your Productivity?</h2>
                     <p>Start using PomodoroPal today and start getting things done!</p>
                     {/* <a href="#" class="cta-button">Get Started</a> */}
+                    <link to='/' className="ctaButton">Get Started</link>
+
                     <div>
                       {/* <link >Get Started</link> */}
 
