@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LoginStyle from './Login.module.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -61,7 +62,7 @@ function Login() {
           />
           <button className={LoginStyle.button} type="submit">Login</button>
           <p className={LoginStyle.p}>
-            {/* Don't have an account? <a className={LoginStyle.a} href="#">Register here</a>. */}
+            Don't have an account? <Link className={LoginStyle.a} href="#">Register here</Link>.
           </p>
         </form>
         <form className={LoginStyle.registrationForm}>
@@ -76,7 +77,7 @@ function Login() {
           <input className={LoginStyle.input} type="password" id="confirm-password" name="confirm-password" required />
           <button className={LoginStyle.button} type="submit">Register</button>
           <p className={LoginStyle.p}>
-            {/* Already have an account? <a className={LoginStyle.a} href="#">Login here</a>. */}
+            Already have an account? <Link className={LoginStyle.a} href="#">Login here</Link>.
           </p>
         </form>
       </div>
