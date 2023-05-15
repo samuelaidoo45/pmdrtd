@@ -6,11 +6,14 @@ function Main() {
     <>
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
-          <li className={MainStyle.li}><a href="#" className="active">Dashboard</a></li>
+          {/* <li className={MainStyle.li}><a href="#" className="active">Dashboard</a></li>
           <li className={MainStyle.li}><a href="#">To-Do Items</a></li>
           <li className={MainStyle.li}><a href="#">Pomodoro Timer</a></li>
           <li className={MainStyle.li}><a href="#">Settings</a></li>
           <li className={MainStyle.li}><a href="#">About</a></li>
+          <link>Dashboard</link> */}
+          <link>Dashboard</link>
+          <link>Dashboard</link>
         </ul>
       </nav>
 

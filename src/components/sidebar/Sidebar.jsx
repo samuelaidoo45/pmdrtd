@@ -1,11 +1,10 @@
 import React from 'react';
-import SidebarCss from "./Sidebar.module.css";
 
 
 function Sidebar() {
   return (
     <>
-    <nav>
+    {/* <nav>
         <ul>
             <li><a href="#" className="active">Dashboard</a></li>
             <li><a href="#" >To-Do Items</a></li>
@@ -13,7 +12,7 @@ function Sidebar() {
             <li><a href="#">Settings</a></li>
             <li><a href="#">About</a></li>
         </ul>
-    </nav>
+    </nav> */}
     </>
   );
 }

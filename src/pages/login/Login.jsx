@@ -14,26 +14,26 @@ function Login() {
     // alert("Hello World");return;
 
     // Post user input data to the server
-    fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Redirect to the dashboard page if login is successful
-          window.location.href = '/dashboard';
-        } else {
-          throw new Error('Login failed');
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        // Display an error message to the user
-        alert('Login failed. Please try again.');
-      });
+    // fetch('/api/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ email, password }),
+    // })
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       // Redirect to the dashboard page if login is successful
+    //       window.location.href = '/dashboard';
+    //     } else {
+    //       throw new Error('Login failed');
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //     // Display an error message to the user
+    //     alert('Login failed. Please try again.');
+    //   });
   };
 
   return (
@@ -61,7 +61,7 @@ function Login() {
           />
           <button className={LoginStyle.button} type="submit">Login</button>
           <p className={LoginStyle.p}>
-            Don't have an account? <a className={LoginStyle.a} href="#">Register here</a>.
+            {/* Don't have an account? <a className={LoginStyle.a} href="#">Register here</a>. */}
           </p>
         </form>
         <form className={LoginStyle.registrationForm}>
@@ -76,7 +76,7 @@ function Login() {
           <input className={LoginStyle.input} type="password" id="confirm-password" name="confirm-password" required />
           <button className={LoginStyle.button} type="submit">Register</button>
           <p className={LoginStyle.p}>
-            Already have an account? <a className={LoginStyle.a} href="#">Login here</a>.
+            {/* Already have an account? <a className={LoginStyle.a} href="#">Login here</a>. */}
           </p>
         </form>
       </div>

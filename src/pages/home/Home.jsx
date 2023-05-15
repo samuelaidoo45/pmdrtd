@@ -1,11 +1,11 @@
-import Sidebar from "../../components/sidebar/Sidebar";
+// import Sidebar from "../../components/sidebar/Sidebar";
 import Main from "../../components/main/Main";
 import "./home.css";
 
 const Home = () => {
   return (
     <div className="home">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="homeContainer">
           <Main />
       </div>
