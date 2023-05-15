@@ -9,7 +9,7 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    window.location.href = '/dashboard';
+    window.location.href = '/pomodoropal/build/dashboard';
     return;
 
     // alert("Hello World");return;
