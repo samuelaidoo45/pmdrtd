@@ -31,7 +31,7 @@ const LandingPage = () => {
                 <h1>Boost Your Productivity with PomodoroPal</h1>
                 <p>A simple yet powerful productivity tool that helps you stay focused and get things done more efficiently.</p>
                 {/* <a href="#" class="cta-button">Get Started</a> */}
-                                <link to='/' className="ctaButton">Get Started</link>
+                                <Link to='/' className="ctaButton">Get Started</Link>
 
                 <div>
                 {/* <link className="">Get Started</link> */}
@@ -107,7 +107,7 @@ const LandingPage = () => {
                     <h2>Ready to Boost Your Productivity?</h2>
                     <p>Start using PomodoroPal today and start getting things done!</p>
                     {/* <a href="#" class="cta-button">Get Started</a> */}
-                    <link to='/' className="ctaButton">Get Started</link>
+                    <Link to='/' className="ctaButton">Get Started</Link>
 
                     <div>
                       {/* <link >Get Started</link> */}
