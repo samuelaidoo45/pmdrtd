@@ -109,9 +109,6 @@ const LandingPage = () => {
                     {/* <a href="#" class="cta-button">Get Started</a> */}
                     <Link to='/' className="ctaButton">Get Started</Link>
 
-                    <div>
-                      {/* <link >Get Started</link> */}
-                    </div>
                 </section>
             </main>
             <footer>
