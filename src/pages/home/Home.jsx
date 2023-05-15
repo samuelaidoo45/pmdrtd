@@ -1,4 +1,5 @@
 // import Sidebar from "../../components/sidebar/Sidebar";
+import React from 'react';
 import Main from "../../components/main/Main";
 import "./home.css";
 
