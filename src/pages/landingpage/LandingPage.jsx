@@ -16,11 +16,11 @@ const LandingPage = () => {
                 <nav className="header-right">
                     <ul>
                         {/* <li><a href="#">Home</a></li> */}
-                        <div><link>Home</link></div>
+                        {/* <div><link>Home</link></div> */}
                         {/* <li><a href="http://127.0.0.1:3000/home">Login</a></li> */}
-                        <div>
+                        {/* <div>
   <Link to="/login">Login</Link>
-</div>
+</div> */}
                         {/* <li><a href="#">About</a></li> */}
                         {/* <li><a href="#">Contact</a></li> */}
                     </ul>
