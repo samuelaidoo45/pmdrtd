@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter basename="/index.html">
+      <BrowserRouter basename="/pomodoropal/build">
         <Routes>
           <Route path="/">
             <Route index element={<LandingPage />} />
