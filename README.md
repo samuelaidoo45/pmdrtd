@@ -76,4 +76,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-This readme file provides an overview of the Pomodoro To-Do App, its features, installation instructions, and usage guidelines. For further assistance or to request additional features, please reach out to the project maintainers.
+This readme file provides an overview of the PomodoroPal App, its features, installation instructions, and usage guidelines. For further assistance or to request additional features, please reach out to the project maintainers.
