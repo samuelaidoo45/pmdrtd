@@ -31,7 +31,7 @@ git clone https://github.com/samuelaidoo45/pmdrtd.git
 2. Navigate to the project directory:
 
 ```shell
-cd pomodoro-todo-app
+cd pmdrtd
 ```
 
 3. Install the required dependencies:
