@@ -1,4 +1,4 @@
-# Pomodoro To-Do App
+# PomodoroPal App
 
 The Pomodoro To-Do App is an elevated task management application designed to help users stay focused and complete their to-do items effectively using the Pomodoro technique. This app allows users to create, edit, delete, start, and complete their to-do items while incorporating a customizable Pomodoro timer.
 
@@ -25,7 +25,7 @@ The Pomodoro To-Do App is an elevated task management application designed to he
 1. Clone the repository:
 
 ```shell
-git clone <repository-url>
+git clone https://github.com/samuelaidoo45/pmdrtd.git
 ```
 
 2. Navigate to the project directory:
