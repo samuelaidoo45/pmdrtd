@@ -9,32 +9,26 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    window.location.href = '/pomodoropal/build/dashboard';
-    return;
-
-    // alert("Hello World");return;
-
-    // Post user input data to the server
-    // fetch('/api/login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ email, password }),
-    // })
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       // Redirect to the dashboard page if login is successful
-    //       window.location.href = '/dashboard';
-    //     } else {
-    //       throw new Error('Login failed');
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     // Display an error message to the user
-    //     alert('Login failed. Please try again.');
-    //   });
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Redirect to the dashboard page if login is successful
+          window.location.href = '/dashboard';
+        } else {
+          throw new Error('Login failed');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        // Display an error message to the user
+        alert('Login failed. Please try again.');
+      });
   };
 
   return (

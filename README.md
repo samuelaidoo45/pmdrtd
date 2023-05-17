@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Pomodoro To-Do App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Pomodoro To-Do App is an elevated task management application designed to help users stay focused and complete their to-do items effectively using the Pomodoro technique. This app allows users to create, edit, delete, start, and complete their to-do items while incorporating a customizable Pomodoro timer.
 
-## Available Scripts
+## App Requirements
 
-In the project directory, you can run:
+- Users can create to-do items.
+- Each to-do item can be edited, deleted, started, or completed.
+- Editing a to-do item updates its content to the new input.
+- Deleted to-do items are permanently removed and cannot be retrieved.
+- When a to-do item is started, a Pomodoro timer initiates and is displayed to the user.
+- During the work cycle, the timer displays "WORK"; during the rest cycle, it displays "REST".
+- The default timer settings are 25 minutes of work followed by a 5-minute break.
+- When a user completes an item or exits the browser, the timer stops.
 
-### `npm start`
+## App Nice-To-Haves
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Users can customize their Pomodoro split, allowing flexibility in work and rest durations.
+- The timer plays unique sounds to signal the start of a work cycle and a rest cycle.
+- The number of Pomodoro cycles spent on an item is saved and persists for future work sessions.
+- When an item is marked as completed, the number of Pomodoro cycles dedicated to that item is displayed next to it.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+git clone <repository-url>
+```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+cd pomodoro-todo-app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the required dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+npm install
+```
 
-### `npm run eject`
+4. Start the application:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```shell
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Access the Pomodoro To-Do App in your browser at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Create a new to-do item by clicking on the "Add Item" button.
+2. Edit a to-do item by clicking on the edit icon next to the item.
+3. Delete a to-do item by clicking on the delete icon next to the item. Note that this action is permanent.
+4. Start a to-do item by clicking on the play icon next to the item. The Pomodoro timer will start, displaying "WORK" during the work cycle and "REST" during the rest cycle.
+5. Customize the Pomodoro split by adjusting the work and rest durations in the settings.
+6. The timer will automatically stop when you mark an item as completed or when you exit the browser.
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Frontend: HTML, CSS, JavaScript, React
+- Backend: Express, Node.js
+- Database: MySQL (optional if backend with persistence is implemented)
+- Browser Storage: Local Storage (if backend is not implemented)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgements
 
-### Analyzing the Bundle Size
+- The Pomodoro Technique - Developed by Francesco Cirillo
+- [Pomodoro Timer Sound](https://www.zapsplat.com/sound-effect-category/pomodoro-timer/)
+- [Icons by Icons8](https://icons8.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This readme file provides an overview of the Pomodoro To-Do App, its features, installation instructions, and usage guidelines. For further assistance or to request additional features, please reach out to the project maintainers.
