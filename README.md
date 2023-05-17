@@ -1,6 +1,6 @@
 # PomodoroPal App
 
-The Pomodoro To-Do App is an elevated task management application designed to help users stay focused and complete their to-do items effectively using the Pomodoro technique. This app allows users to create, edit, delete, start, and complete their to-do items while incorporating a customizable Pomodoro timer.
+The PomodoroPal App is an elevated task management application designed to help users stay focused and complete their to-do items effectively using the Pomodoro technique. This app allows users to create, edit, delete, start, and complete their to-do items while incorporating a customizable Pomodoro timer.
 
 ## App Requirements
 
@@ -46,7 +46,7 @@ npm install
 npm start
 ```
 
-5. Access the Pomodoro To-Do App in your browser at `http://localhost:3000`.
+5. Access the PomodoroPal App in your browser at `http://localhost:3000`.
 
 ## Usage
 
