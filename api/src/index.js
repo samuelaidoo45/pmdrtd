@@ -1,10 +1,15 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
 const toDoItemRoutes = require('./routes/toDoItemRoutes');
+const cors = require('cors');
+
 
 const app = express();
 
 //middlewares
+app.use(cors());
+app.use(express.json());
+
 app.use('/api/user', userRoutes);
 app.use('/api/todo',toDoItemRoutes);
 

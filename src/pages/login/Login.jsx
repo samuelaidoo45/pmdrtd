@@ -5,11 +5,16 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [url, setUrl] = useState('');
+  const [showRegistration, setShowRegistration] = useState(false); // State to toggle between login and registration forms
+
 
   const handleLogin = (event) => {
     event.preventDefault();
 
-    fetch('/api/login', {
+    setUrl('http://127.0.0.1:5000/api/user/login');
+
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -17,9 +22,10 @@ function Login() {
       body: JSON.stringify({ email, password }),
     })
       .then((response) => {
+        // console.log(response.body);
         if (response.ok) {
           // Redirect to the dashboard page if login is successful
-          window.location.href = '/dashboard';
+          window.location.href = 'pomodoropal/build/dashboard';
         } else {
           throw new Error('Login failed');
         }
@@ -31,10 +37,14 @@ function Login() {
       });
   };
 
+  const handleToggleForm = () => {
+    setShowRegistration(!showRegistration);
+  };
+
   return (
     <div className={LoginStyle.container}>
       <div className={LoginStyle.formContainer}>
-        <form className={LoginStyle.loginForm} onSubmit={handleLogin}>
+        <form className={`${LoginStyle.loginForm} ${showRegistration ? LoginStyle.hidden : ''}`} onSubmit={handleLogin}>
           <h1 className={LoginStyle.h1}>Login</h1>
           <label className={LoginStyle.label} htmlFor="email">Email:</label>
           <input className={LoginStyle.input}
@@ -56,10 +66,10 @@ function Login() {
           />
           <button className={LoginStyle.button} type="submit">Login</button>
           <p className={LoginStyle.p}>
-            Don't have an account? <Link className={LoginStyle.a} href="#">Register here</Link>.
+            Don't have an account? <Link onClick={handleToggleForm} className={LoginStyle.a} to="#">Register here</Link>.
           </p>
         </form>
-        <form className={LoginStyle.registrationForm}>
+        <form className={`${LoginStyle.registrationForm} ${showRegistration ? '' : LoginStyle.hidden}`}>
           <h1 className={LoginStyle.h1}>Register</h1>
           <label className={LoginStyle.label} htmlFor="name">Name:</label>
           <input className={LoginStyle.input} type="text" id="name" name="name" required />
@@ -71,7 +81,7 @@ function Login() {
           <input className={LoginStyle.input} type="password" id="confirm-password" name="confirm-password" required />
           <button className={LoginStyle.button} type="submit">Register</button>
           <p className={LoginStyle.p}>
-            Already have an account? <Link className={LoginStyle.a} href="#">Login here</Link>.
+            Already have an account? <Link onClick={handleToggleForm} className={LoginStyle.a} to="#">Login here</Link>.
           </p>
         </form>
       </div>

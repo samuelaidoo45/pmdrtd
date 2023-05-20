@@ -1,12 +1,11 @@
 const User = require('../models/User');
 
 
-
-
 async function login(req, res) {
-  const { username, password } = req.body;
-
-  res.send(username,password);return;
+  // const { username, password } = req.body;
+  console.log(req.body);
+  // res.send(req.body);
+  return res.status(200).json({ message: 'don ding',reqBody: req.body,test:'test'});
 
   try {
     // Find the user with the provided username
