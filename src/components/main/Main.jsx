@@ -1,19 +1,18 @@
 import React from 'react';
 import MainStyle from './Main.module.css';
+import { Link } from 'react-router-dom';
+
 
 function Main() {
   return (
     <>
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
-          {/* <li className={MainStyle.li}><a href="#" className="active">Dashboard</a></li>
-          <li className={MainStyle.li}><a href="#">To-Do Items</a></li>
-          <li className={MainStyle.li}><a href="#">Pomodoro Timer</a></li>
-          <li className={MainStyle.li}><a href="#">Settings</a></li>
-          <li className={MainStyle.li}><a href="#">About</a></li>
-          <link>Dashboard</link> */}
-          <link>Dashboard</link>
-          <link>Dashboard</link>
+          <Link className={MainStyle.li} to='#'>Dashboard</Link>
+          <Link className={MainStyle.li} to='#'>To-Do Items</Link>
+          <Link className={MainStyle.li} to='#'>Pomodoro Timer</Link>
+          <Link className={MainStyle.li} to='#'>Settings</Link>
+          <Link className={MainStyle.li} to='#'>About</Link>
         </ul>
       </nav>
 
@@ -68,5 +67,4 @@ function Main() {
     </>
   );
 }
-
 export default Main;
