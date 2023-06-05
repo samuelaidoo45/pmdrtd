@@ -79,7 +79,7 @@ function Login() {
     }).catch((error) => {
         console.error(error);
         // Display an error message to the user
-        toast.error('Register failed. Please try again.');
+        toast.error('Registration failed. Please try again.');
         // alert('Register failed. Please try again.');
     });
   }
