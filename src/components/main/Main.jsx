@@ -1,9 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainStyle from './Main.module.css';
 import { Link } from 'react-router-dom';
 
 
 function Main() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [task, setTask] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
+  const [url, setUrl] = useState('');
+
+
+  const handleTaskChange = (e) => {
+    setTask(e.target.value);
+  };
+
+  const handleTaskDescriptionChange = (e) => {
+    setTaskDescription(e.target.value);
+  };
+
+  const baseUrl = 'http://127.0.0.1:5000';
+
+  const handleSubmit = (e) => {
+  
+    e.preventDefault();
+
+    setUrl(baseUrl+'/api/todo/createTasks');
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ task, taskDescription }),
+    })
+      .then((response) => {
+        // console.log(response.body);
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Login failed');
+        }
+      }).then((data)=>{
+        // Redirect to the dashboard page if login is successful
+        // console.log(data);
+      }).catch((error) => {
+        // console.error(error);
+        // Display an error message to the user
+        // alert('Login failed. Please try again.');
+      });
+    // Handle form submission here
+    // console.log('Task:', task);
+    // console.log('Task Description:', taskDescription);
+
+    //capture the data from the form and submit it to the backend
+    closeModal();
+  };
+
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <nav className={MainStyle.nav}>
@@ -18,7 +79,7 @@ function Main() {
 
       <main className={MainStyle.main}>
 
-        <h1 className={MainStyle.h1}>My Todo List</h1>
+        <h1 className={MainStyle.h1}>Tasks List</h1>
         <form className={MainStyle.form}>
           <label htmlFor="filter">Filter by Status:</label>
           <select className={MainStyle.select} id="filter">
@@ -29,7 +90,50 @@ function Main() {
           </select>
         </form>
 
-        <button className={MainStyle.button}>Create New Item</button>
+        <button className={`${MainStyle.button} ${MainStyle.createNewItem}`} onClick={openModal}>
+          Create New Item
+        </button>
+
+        {isModalOpen && (
+          <div className={MainStyle.modalOverlay}>
+            <div className={`${MainStyle.modal} ${MainStyle.largeModal}`}>
+               <h2 >Add New Item</h2>
+
+              <div className={MainStyle.modalContent}>
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor="task">Task:</label>
+                  <input className={MainStyle.select}
+                    type="text"
+                    id="task"
+                    value={task}
+                    onChange={handleTaskChange}
+                    placeholder="Enter task"
+                  />
+                  <br></br>
+                  <label htmlFor="taskDescription">Task Description:</label>
+                  <textarea className={MainStyle.select}
+                    id="taskDescription"
+                    value={taskDescription}
+                    onChange={handleTaskDescriptionChange}
+                    placeholder="Enter task description"
+                  ></textarea>
+
+                  <br></br>
+                  <div className={MainStyle.buttonContainer}>
+
+                    <button className={MainStyle.button} type="submit">Submit</button>
+                    <button className={MainStyle.button} type="button" onClick={closeModal}>
+                      Close
+                    </button>
+
+                  </div>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
 
         <ul className={MainStyle.ul}>
           <li className={MainStyle.li}>
@@ -42,27 +146,8 @@ function Main() {
               <button className={`${MainStyle.button} ${MainStyle.delete}`}>Delete</button>
             </div>
           </li>
-          {/* <li>
-            <h2>Item 2</h2>
-            <p>Description of Item 2</p>
-            <span className="status in-progress">In Progress</span>
-            <div className="actions">
-              <button className="start">Start</button>
-              <button className="edit">Edit</button>
-              <button className="delete">Delete</button>
-            </div>
-          </li>
-          <li>
-            <h2>Item 3</h2>
-            <p>Description of Item 3</p>
-            <span className="status completed">Completed</span>
-            <div className="actions">
-              <button className="start">Start</button>
-              <button className="edit">Edit</button>
-              <button className="delete">Delete</button>
-            </div>
-          </li> */}
         </ul>
+
       </main>
     </>
   );

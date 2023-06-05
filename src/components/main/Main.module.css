@@ -317,3 +317,109 @@ body {
     gap: 10px;
 }
 
+.createNewItem{
+    margin-bottom: 20px;
+}
+
+
+/* Main.module.css */
+
+/* ... previous styles ... */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .modal form {
+    width: 100%;
+  }
+  
+  .modal label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal input,
+  .modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modal button[type="submit"],
+  .modal button[type="button"] {
+    padding: 10px 20px;
+    background-color: #1B1E2D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal button[type="submit"]:hover,
+  .modal button[type="button"]:hover {
+    background-color: #2f3554;
+  }
+  
+  .modal button[type="submit"] {
+    margin-right: 10px;
+  }
+  
+  .modal button[type="button"] {
+    background-color: #FF6978;;
+  }
+  
+  .modal button[type="button"]:hover {
+    background-color: #c82333;
+  }
+
+  .modal button[type="submit"],
+.modal button[type="button"] {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .modal button[type="submit"]:hover,
+.modal button[type="button"]:hover {
+  background-color: #0056b3;
+} */
+
+.modal .buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+  
