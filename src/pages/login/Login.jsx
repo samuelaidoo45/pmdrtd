@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import LoginStyle from './Login.module.css';
 // import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -34,12 +36,16 @@ function Login() {
         }
       }).then((data)=>{
         // Redirect to the dashboard page if login is successful
+        toast.success('Login successful!');
+
         console.log(data);
         window.location.href = 'pomodoropal/build/dashboard';
       }).catch((error) => {
         console.error(error);
         // Display an error message to the user
-        alert('Login failed. Please try again.');
+        // alert('Login failed. Please try again.');
+        toast.error('Login failed. Please try again.');
+
       });
   };
 
@@ -64,14 +70,17 @@ function Login() {
           throw new Error('Login failed');
         }
     }).then((data)=>{
-        console.log(data.message);
+        // console.log(data.message);
+        toast.success('Registration successful!');
+
         //Redirect to the dashboard page if login is successful
         //window.location.href = 'pomodoropal/build/dashboard';
         handleToggleForm();
     }).catch((error) => {
         console.error(error);
         // Display an error message to the user
-        alert('Register failed. Please try again.');
+        toast.error('Register failed. Please try again.');
+        // alert('Register failed. Please try again.');
     });
   }
 
@@ -79,6 +88,7 @@ function Login() {
   return (
     <div className={LoginStyle.container}>
       <div className={LoginStyle.formContainer}>
+        <ToastContainer />
         <form className={`${LoginStyle.loginForm} ${showRegistration ? LoginStyle.hidden : ''}`} onSubmit={handleLogin}>
           <h1 className={LoginStyle.h1}>Login</h1>
           <label className={LoginStyle.label} htmlFor="email">Email:</label>
