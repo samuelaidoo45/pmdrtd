@@ -4,6 +4,7 @@ const routers = express.Router();
 const ToDoItemController = require('../controllers/ToDoItemController');
 
 // POST /login
-routers.get('/createTasks', ToDoItemController.createTasks);
+routers.post('/createTasks', ToDoItemController.createTasks);
+routers.get('/getTasks', ToDoItemController.getTasks);
 
 module.exports = routers;

@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import MainStyle from './Main.module.css';
 import { Link } from 'react-router-dom';
-
+import TodoList from "../todolist/TodoList";
 
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [task, setTask] = useState('');
-  const [taskDescription, setTaskDescription] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
+  const [tasks, setTasks] = useState([]); // State to store the tasks from the backend
 
 
-  const handleTaskChange = (e) => {
-    setTask(e.target.value);
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   };
 
-  const handleTaskDescriptionChange = (e) => {
-    setTaskDescription(e.target.value);
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
   };
 
   const baseUrl = 'http://127.0.0.1:5000';
@@ -31,27 +32,24 @@ function Main() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ task, taskDescription }),
+      body: JSON.stringify({ title, description }),
     })
       .then((response) => {
-        // console.log(response.body);
         if (response.ok) {
           return response.json();
         } else {
           throw new Error('Login failed');
         }
       }).then((data)=>{
-        // Redirect to the dashboard page if login is successful
         // console.log(data);
-      }).catch((error) => {
-        // console.error(error);
-        // Display an error message to the user
-        // alert('Login failed. Please try again.');
-      });
-    // Handle form submission here
-    // console.log('Task:', task);
-    // console.log('Task Description:', taskDescription);
+        //setTasks(data.data);
+        setTasks(prevTasks => [...prevTasks, data.data]);
 
+
+      }).catch((error) => {
+        // Display an error message to the user
+      });
+      
     //capture the data from the form and submit it to the backend
     closeModal();
   };
@@ -64,6 +62,37 @@ function Main() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  //get the data from the backend and display it on the page
+  useEffect(() => {
+
+  const getTasks = () => {
+    fetch(baseUrl+'/api/todo/getTasks', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Oops and error occured');
+        }
+      }).then((data)=>{
+        console.log(data);
+        //display data on the page
+        setTasks(data.data);
+        
+
+      }).catch((error) => {
+        // Display an error message to the user
+      });
+  };
+
+  //call getTasks
+  getTasks();
+}, []);
 
   return (
     <>
@@ -105,16 +134,16 @@ function Main() {
                   <input className={MainStyle.select}
                     type="text"
                     id="task"
-                    value={task}
-                    onChange={handleTaskChange}
+                    value={title}
+                    onChange={handleTitleChange}
                     placeholder="Enter task"
                   />
                   <br></br>
                   <label htmlFor="taskDescription">Task Description:</label>
                   <textarea className={MainStyle.select}
                     id="taskDescription"
-                    value={taskDescription}
-                    onChange={handleTaskDescriptionChange}
+                    value={description}
+                    onChange={handleDescriptionChange}
                     placeholder="Enter task description"
                   ></textarea>
 
@@ -136,7 +165,7 @@ function Main() {
         )}
 
         <ul className={MainStyle.ul}>
-          <li className={MainStyle.li}>
+          {/* <li className={MainStyle.li}>
             <h2 className={MainStyle.h2}>Item 1</h2>
             <p className={MainStyle.p}>Description of Item 1</p>
             <span className={`${MainStyle.status}  ${MainStyle.notStarted}`}>Not Started</span>
@@ -145,7 +174,9 @@ function Main() {
               <button className={`${MainStyle.button} ${MainStyle.edit}`}>Edit</button>
               <button className={`${MainStyle.button} ${MainStyle.delete}`}>Delete</button>
             </div>
-          </li>
+          </li> */}
+           <TodoList data={tasks} />
+
         </ul>
 
       </main>

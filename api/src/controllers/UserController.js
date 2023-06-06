@@ -34,7 +34,6 @@ async function register(req, res) {
     // Check if user already exists
     // const existingUser = await User.findOne({ username });
 
-
     // if (existingUser) {
     //   return res.status(400).json({ error: 'User already exists' });
     // }
