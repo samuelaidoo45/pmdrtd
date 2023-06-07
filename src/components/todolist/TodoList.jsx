@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import MainStyle from './TodoList.module.css';
 
-const TodoList = ({ data }) => {
+const TodoList = ({ data, onDelete }) => {
+
+
+
   return (
     <ul>
       {data.map(item => (
@@ -13,8 +16,11 @@ const TodoList = ({ data }) => {
           </span>
           <div className={MainStyle.actions}>
             <button className={`${MainStyle.button} ${MainStyle.start}`}>Start</button>
-            <button className={`${MainStyle.button} ${MainStyle.edit}`}>Edit</button>
-            <button className={`${MainStyle.button} ${MainStyle.delete}`}>Delete</button>
+            {/* <button className={`${MainStyle.button} ${MainStyle.edit}`}>Edit</button> */}
+            {/* <button className={`${MainStyle.button} ${MainStyle.delete}`}>Delete</button> */}
+            <button className={`${MainStyle.button} ${MainStyle.delete}`} onClick={() => onDelete(item.id)}>
+              Delete
+            </button>
           </div>
         </li>
       ))}

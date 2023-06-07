@@ -2,6 +2,11 @@ import React, { useState,useEffect } from 'react';
 import MainStyle from './Main.module.css';
 import { Link } from 'react-router-dom';
 import TodoList from "../todolist/TodoList";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,6 +14,7 @@ function Main() {
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
   const [tasks, setTasks] = useState([]); // State to store the tasks from the backend
+
 
 
   const handleTitleChange = (e) => {
@@ -45,6 +51,7 @@ function Main() {
         //setTasks(data.data);
         setTasks(prevTasks => [...prevTasks, data.data]);
 
+        toast.success('Task added successfully');
 
       }).catch((error) => {
         // Display an error message to the user
@@ -94,8 +101,32 @@ function Main() {
   getTasks();
 }, []);
 
+
+const handleDelete = (itemId) => {
+  confirmAlert({
+    title: 'Confirm deletion',
+    message: 'Are you sure you want to delete this item?',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => {
+          const updatedData = tasks.filter(item => item.id !== itemId);
+          setTasks(updatedData);
+          toast.success('Item deleted successfully');
+        }
+      },
+      {
+        label: 'No',
+        onClick: () => { }
+      }
+    ]
+  });
+};
+
+
   return (
     <>
+      <ToastContainer />
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
           <Link className={MainStyle.li} to='#'>Dashboard</Link>
@@ -126,7 +157,7 @@ function Main() {
         {isModalOpen && (
           <div className={MainStyle.modalOverlay}>
             <div className={`${MainStyle.modal} ${MainStyle.largeModal}`}>
-               <h2 >Add New Item</h2>
+               <h2 >Create New Task</h2>
 
               <div className={MainStyle.modalContent}>
                 <form onSubmit={handleSubmit}>
@@ -150,7 +181,7 @@ function Main() {
                   <br></br>
                   <div className={MainStyle.buttonContainer}>
 
-                    <button className={MainStyle.button} type="submit">Submit</button>
+                    <button className={MainStyle.button} type="submit">Create</button>
                     <button className={MainStyle.button} type="button" onClick={closeModal}>
                       Close
                     </button>
@@ -175,7 +206,10 @@ function Main() {
               <button className={`${MainStyle.button} ${MainStyle.delete}`}>Delete</button>
             </div>
           </li> */}
-           <TodoList data={tasks} />
+           {/* <TodoList data={tasks} /> */}
+           {/* <TodoList data={tasks} /> */}
+           <TodoList data={tasks} onDelete={handleDelete} />
+
 
         </ul>
 
