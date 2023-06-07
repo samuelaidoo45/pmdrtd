@@ -18,6 +18,8 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
+    window.location.href = 'pomodoropal/build/dashboard';
+
     setUrl(baseUrl+'/api/user/login');
 
     fetch(url, {
