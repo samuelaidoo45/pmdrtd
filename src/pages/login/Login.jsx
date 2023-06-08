@@ -3,6 +3,8 @@ import LoginStyle from './Login.module.css';
 // import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from 'react-router-dom';
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -11,15 +13,21 @@ function Login() {
   const [showRegistration, setShowRegistration] = useState(false); // State to toggle between login and registration forms
   const [username, setUserName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   
   const baseUrl = 'http://127.0.0.1:5000';
+
+  const navigation = useHistory();
+
 
 
   const handleLogin = (event) => {
     event.preventDefault();
 
     // window.location.href = 'pomodoropal/build/home';
-    window.location.assign('pomodoropal/build/home')
+    // window.location.assign('pomodoropal/build/home');
+    navigation.push('/home'); // Navigates to the "/home" route
+    return;
 
     setUrl(baseUrl+'/api/user/login');
 
