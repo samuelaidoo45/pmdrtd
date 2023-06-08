@@ -3,7 +3,7 @@ import LoginStyle from './Login.module.css';
 // import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
@@ -17,9 +17,7 @@ function Login() {
   
   const baseUrl = 'http://127.0.0.1:5000';
 
-  const navigation = useHistory();
-
-
+  const navigation = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
