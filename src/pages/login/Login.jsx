@@ -18,7 +18,7 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    window.location.href = 'pomodoropal/build/dashboard';
+    window.location.href = 'pomodoropal/build/home';
 
     setUrl(baseUrl+'/api/user/login');
 
