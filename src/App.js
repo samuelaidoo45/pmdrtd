@@ -14,7 +14,7 @@ function App() {
           <Route path="/">
             <Route index element={<LandingPage />} />
             <Route path="login" element={<Login />} />
-            <Route path="home" element={<Home />} />
+            <Route path="dashboard" element={<Home />} />
 
           </Route>
         </Routes>

@@ -26,7 +26,7 @@ function Login() {
 
     // window.location.href = 'pomodoropal/build/home';
     // window.location.assign('pomodoropal/build/home');
-    navigation.push('/home'); // Navigates to the "/home" route
+    navigation.push('/dashboard'); // Navigates to the "/home" route
     return;
 
     setUrl(baseUrl+'/api/user/login');
