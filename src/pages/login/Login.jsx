@@ -17,14 +17,14 @@ function Login() {
   
   const baseUrl = 'http://127.0.0.1:5000';
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
 
     // window.location.href = 'pomodoropal/build/home';
     // window.location.assign('pomodoropal/build/home');
-    navigation.push('/dashboard'); // Navigates to the "/home" route
+    navigate('/dashboard'); // Navigates to the "/home" route
     return;
 
     setUrl(baseUrl+'/api/user/login');
