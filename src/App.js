@@ -1,5 +1,5 @@
 import Home from "./pages/home/Home";
-import LandingPage from "./pages/landingpage/LandingPage";
+// import LandingPage from "./pages/landingpage/LandingPage";
 import Login from "./pages/login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter basename="/pomodoropal/build">
         <Routes>
           <Route path="/">
-            <Route index element={<LandingPage />} />
+            <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="home" element={<Home />} />
 
