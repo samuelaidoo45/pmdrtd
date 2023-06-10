@@ -40,6 +40,12 @@ app.use(
 app.use(express.static(path.join(__dirname, 'build')));
 
 
+// Serve index.html for all routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
