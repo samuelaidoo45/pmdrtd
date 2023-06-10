@@ -13,8 +13,9 @@ const secret = crypto.randomBytes(64).toString('hex');
 
 const app = express();
 
-app.get('/pomodoropal/api/hello',()=>{
+app.get('/pomodoropal/api/hello',(req,res)=>{
   console.log("Hello World");
+  res.send("Hello World");
 });
 
 db.authenticate()
