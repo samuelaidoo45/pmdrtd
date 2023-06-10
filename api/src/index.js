@@ -27,13 +27,13 @@ db.authenticate()
 //middlewares
 app.use(cors());
 app.use(express.json());
-app.use(
-  session({
-    secret: secret,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+// app.use(
+//   session({
+//     secret: secret,
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/pomodoropal/api/user', userRoutes);
