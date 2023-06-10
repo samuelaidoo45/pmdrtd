@@ -22,11 +22,6 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    // window.location.href = 'pomodoropal/build/home';
-    // window.location.assign('pomodoropal/build/home');
-    // navigate('/dashboard'); // Navigates to the "/home" route
-    // return;
-
     setUrl(baseUrl+'/user/login');
 
     fetch(url, {
