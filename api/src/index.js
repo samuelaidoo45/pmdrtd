@@ -3,6 +3,10 @@ const userRoutes = require('./routes/userRoutes');
 const toDoItemRoutes = require('./routes/toDoItemRoutes');
 const cors = require('cors');
 const db = require('../config/database');
+const crypto = require('crypto');
+
+
+const secret = crypto.randomBytes(64).toString('hex');
 
 
 const app = express();
@@ -22,6 +26,13 @@ db.authenticate()
 //middlewares
 app.use(cors());
 app.use(express.json());
+app.use(
+  session({
+    secret: secret,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/pomodoropal/api/user', userRoutes);

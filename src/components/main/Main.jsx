@@ -124,7 +124,6 @@ const handleDelete = (itemId) => {
                 throw new Error('Oops and error occured');
               }
             }).then((data)=>{
-              console.log(data);
 
               toast.success('Task deleted successfully');
 
@@ -134,7 +133,6 @@ const handleDelete = (itemId) => {
             });
           const updatedData = tasks.filter(item => item.id !== itemId);
           setTasks(updatedData);
-          toast.success('Item deleted successfully');
         }
       },
       {

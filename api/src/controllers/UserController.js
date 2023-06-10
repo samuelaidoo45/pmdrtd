@@ -4,13 +4,18 @@ const User = require('../models/User');
 async function login(req, res) {
   const { email, password } = req.body;
   try {
-    // Find the user with the provided username
+    // Find the user with the provided email
     const user = await User.findOne({ where: { email } });
 
     // Check if the user exists and the password matches
     if (!user || !user.comparePassword(password)) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
+
+    // Store relevant data in the session
+    req.session.userId = user.id;
+    req.session.email = user.email;
+
     // Perform additional actions if login is successful
     // For example, you can generate a token and send it in the response
     return res.status(200).json({ message: 'Login successful' });
