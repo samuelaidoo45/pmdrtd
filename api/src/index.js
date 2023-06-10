@@ -13,6 +13,17 @@ const secret = crypto.randomBytes(64).toString('hex');
 
 const app = express();
 
+//middlewares
+app.use(cors());
+app.use(express.json());
+app.use(
+  session({
+    secret: secret,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 app.get('/pomodoropal/api/hello',(req,res)=>{
   console.log("Hello World");
   res.send("Hello World");
@@ -31,16 +42,7 @@ db.authenticate()
 });
 
 
-//middlewares
-app.use(cors());
-app.use(express.json());
-app.use(
-  session({
-    secret: secret,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+
 
 
 
