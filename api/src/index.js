@@ -6,7 +6,7 @@ const db = require('../config/database');
 
 const session = require('express-session');
 const crypto = require('crypto');
-const path = require('path');
+//const path = require('path');
 
 
 
@@ -27,14 +27,14 @@ db.authenticate()
     console.error('Error connecting to the database:', err);
 });
 
-const dirname = "https://app.tivateonline.com/pomodoropal/build/index.html"
-// Serve static files
-app.use(express.static(dirname));
+// const dirname = "https://app.tivateonline.com/pomodoropal/build/index.html";
+// // Serve static files
+// app.use(express.static(dirname));
 
-// Catch-all route
-app.get('/*', (req, res) => {
-  res.sendFile(dirname);
-});
+// // Catch-all route
+// app.get('/*', (req, res) => {
+//   res.sendFile(dirname);
+// });
 
 //middlewares
 app.use(cors());
