@@ -22,7 +22,22 @@ async function getTasks(req, res) {
     }
 }
 
+//Delete a task
+async function deleteTask(req, res) {
+    const { id } = req.params;
+    try {
+        const task = await TodoItem.findOne({ where: { id } });
+        if (!task) return res.status(404).json({ message: 'Task not found' });
+        await task.destroy();
+        return res.status(200).json({ message: 'Task deleted successfully' });
+    } catch (error) {
+        return res.status(500).json({ message: 'Something went wrong', error });
+    }
+
+}
+
 module.exports = {
     createTasks,
-    getTasks
+    getTasks,
+    deleteTask
 };

@@ -110,6 +110,28 @@ const handleDelete = (itemId) => {
       {
         label: 'Yes',
         onClick: () => {
+          // Delete the item from the backend
+          fetch(baseUrl+'/todo/deleteTask/'+itemId, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error('Oops and error occured');
+              }
+            }).then((data)=>{
+              console.log(data);
+
+              toast.success('Task deleted successfully');
+
+            }).catch((error) => {
+              // Display an error message to the user
+
+            });
           const updatedData = tasks.filter(item => item.id !== itemId);
           setTasks(updatedData);
           toast.success('Item deleted successfully');
