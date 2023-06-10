@@ -27,12 +27,13 @@ db.authenticate()
     console.error('Error connecting to the database:', err);
 });
 
+const dirname = "https://app.tivateonline.com/pomodoropal/"
 // Serve static files
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(dirname, 'build')));
 
 // Catch-all route
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.sendFile(path.join(dirname, 'build', 'index.html'));
 });
 
 //middlewares
