@@ -25,13 +25,13 @@ function Main() {
     setDescription(e.target.value);
   };
 
-  const baseUrl = 'http://127.0.0.1:5000';
+  const baseUrl = 'https://app.tivateonline.com/pomodoropal/api';
 
   const handleSubmit = (e) => {
   
     e.preventDefault();
 
-    setUrl(baseUrl+'/api/todo/createTasks');
+    setUrl(baseUrl+'/todo/createTasks');
 
     fetch(url, {
       method: 'POST',
@@ -74,7 +74,7 @@ function Main() {
   useEffect(() => {
 
   const getTasks = () => {
-    fetch(baseUrl+'/api/todo/getTasks', {
+    fetch(baseUrl+'/todo/getTasks', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
