@@ -14,8 +14,8 @@ async function login(req, res) {
     }
 
     // Store relevant data in the session
-    // req.session.userId = user.id;
-    // req.session.email = user.email;
+    req.session.userId = user.id;
+    req.session.email = user.email;
 
     // Perform additional actions if login is successful
     // For example, you can generate a token and send it in the response
