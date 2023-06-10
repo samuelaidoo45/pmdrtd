@@ -39,7 +39,7 @@ app.use(
   })
 );
 
-app.get('/pomodoropal/api/',()=>{
+app.get('/pomodoropal/api/hello',()=>{
   console.log("Hello World");
 });
 
