@@ -39,6 +39,9 @@ app.use(
   })
 );
 
+app.get('/pomodoropal/api/',()=>{
+  console.log("Hello World");
+});
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
