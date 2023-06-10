@@ -37,6 +37,13 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+
+app.get('/', (req, res) => res.send('Hello World!'));
+app.use('/pomodoropal/api/user', userRoutes);
+app.use('/pomodoropal/api/todo',toDoItemRoutes);
+
+console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'build')));
 
 
@@ -45,10 +52,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
-app.get('/', (req, res) => res.send('Hello World!'));
-app.use('/pomodoropal/api/user', userRoutes);
-app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
 
 const port = 5000; // Replace with your desired port number
