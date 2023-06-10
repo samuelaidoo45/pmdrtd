@@ -27,6 +27,14 @@ db.authenticate()
     console.error('Error connecting to the database:', err);
 });
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Catch-all route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 //middlewares
 app.use(cors());
 app.use(express.json());
