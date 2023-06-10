@@ -20,13 +20,12 @@ db.authenticate()
 });
 
 //middlewares
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.use('/user', userRoutes);
 app.use('/todo',toDoItemRoutes);
 
-//hello worldmysql
 
 const port = 5000; // Replace with your desired port number
 app.listen(process.env.PORT || port);
