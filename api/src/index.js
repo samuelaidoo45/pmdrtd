@@ -23,10 +23,10 @@ db.authenticate()
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/user', userRoutes);
-app.use('/api/todo',toDoItemRoutes);
+app.use('/user', userRoutes);
+app.use('/todo',toDoItemRoutes);
 
-//hello world
+//hello worldmysql
 
 const port = 5000; // Replace with your desired port number
 app.listen(port, () => {

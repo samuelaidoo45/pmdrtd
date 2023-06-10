@@ -15,7 +15,7 @@ function Login() {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   
-  const baseUrl = 'http://127.0.0.1:5000';
+  const baseUrl = 'https://app.tivateonline.com/pomodoropal/api';
 
   const navigate = useNavigate();
 
@@ -24,10 +24,10 @@ function Login() {
 
     // window.location.href = 'pomodoropal/build/home';
     // window.location.assign('pomodoropal/build/home');
-    navigate('/dashboard'); // Navigates to the "/home" route
-    return;
+    // navigate('/dashboard'); // Navigates to the "/home" route
+    // return;
 
-    setUrl(baseUrl+'/api/user/login');
+    setUrl(baseUrl+'/user/login');
 
     fetch(url, {
       method: 'POST',
@@ -47,8 +47,9 @@ function Login() {
         // Redirect to the dashboard page if login is successful
         toast.success('Login successful!');
 
-        console.log(data);
-        window.location.href = 'pomodoropal/build/dashboard';
+        // console.log(data);
+        navigate('/dashboard'); // Navigates to the "/home" route
+
       }).catch((error) => {
         console.error(error);
         // Display an error message to the user
@@ -65,7 +66,7 @@ function Login() {
   const handleRegister = (event) => {
     event.preventDefault();
 
-    fetch(baseUrl+'/api/user/register', {
+    fetch(baseUrl+'/user/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
