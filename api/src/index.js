@@ -29,6 +29,4 @@ app.use('/todo',toDoItemRoutes);
 //hello worldmysql
 
 const port = 5000; // Replace with your desired port number
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.listen(process.env.PORT || port);
