@@ -39,7 +39,6 @@ app.use(
 );
 
 
-app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
