@@ -8,12 +8,14 @@ const session = require('express-session');
 const crypto = require('crypto');
 //const path = require('path');
 
-
-
 const secret = crypto.randomBytes(64).toString('hex');
 
 
 const app = express();
+
+app.get('/pomodoropal/api/hello',()=>{
+  console.log("Hello World");
+});
 
 db.authenticate()
   .then(() => {
@@ -39,9 +41,7 @@ app.use(
   })
 );
 
-app.get('/pomodoropal/api/hello',()=>{
-  console.log("Hello World");
-});
+
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
