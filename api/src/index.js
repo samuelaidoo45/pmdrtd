@@ -42,14 +42,14 @@ app.use(
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
-console.log(__dirname);
-app.use(express.static(path.join(__dirname, 'build')));
+// console.log(__dirname);
+// app.use(express.static(path.join(__dirname, 'build')));
 
 
-// Serve index.html for all routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+// // Serve index.html for all routes
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 
 
