@@ -27,14 +27,6 @@ db.authenticate()
     console.error('Error connecting to the database:', err);
 });
 
-// const dirname = "https://app.tivateonline.com/pomodoropal/build/index.html";
-// // Serve static files
-// app.use(express.static(dirname));
-
-// // Catch-all route
-// app.get('/*', (req, res) => {
-//   res.sendFile(dirname);
-// });
 
 //middlewares
 app.use(cors());
@@ -59,8 +51,6 @@ app.use('/pomodoropal/api/todo',toDoItemRoutes);
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
-
-
 
 const port = 5000; // Replace with your desired port number
 app.listen(process.env.PORT || port);
