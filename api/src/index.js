@@ -24,8 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.use('/user', userRoutes);
-app.use('/todo',toDoItemRoutes);
+app.use('/pomodoropal/api/user', userRoutes);
+app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
 
 const port = 5000; // Replace with your desired port number
