@@ -24,7 +24,6 @@ app.use(
   })
 );
 
-
 app.get('/pomodoropal/api/hello',(req,res)=>{
   res.send("Hello World");
 });
