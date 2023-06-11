@@ -7,11 +7,9 @@ import React from 'react';
 
 function App() {
 
-  const Router = StaticRouter ;
-
   return (
     <div className="app">
-      <BrowserRouter basename="/pomodoropal/build">
+      <StaticRouter basename="/pomodoropal/build">
         <Routes>
           <Route path="/">
             <Route index element={<LandingPage />} />
@@ -20,7 +18,7 @@ function App() {
 
           </Route>
         </Routes>
-      </BrowserRouter>
+      </StaticRouter>
     </div>
   );
 }
