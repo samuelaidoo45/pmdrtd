@@ -6,7 +6,7 @@ const db = require('../config/database');
 
 const session = require('express-session');
 const crypto = require('crypto');
-//const path = require('path');
+const path = require('path');
 
 const secret = crypto.randomBytes(64).toString('hex');
 
