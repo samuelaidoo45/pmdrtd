@@ -44,8 +44,6 @@ db.authenticate()
 
 
 
-
-
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
