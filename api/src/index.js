@@ -25,14 +25,6 @@ app.use(
 );
 
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Serve the index.html for any route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
 app.get('/pomodoropal/api/hello',(req,res)=>{
   res.send("Hello World");
 });
@@ -53,6 +45,13 @@ db.authenticate()
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Serve the index.html for any route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const port = 5000; // Replace with your desired port number
 app.listen(process.env.PORT || port);
