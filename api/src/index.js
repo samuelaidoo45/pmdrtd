@@ -6,7 +6,7 @@ const db = require('../config/database');
 
 const session = require('express-session');
 const crypto = require('crypto');
-const path = require('path');
+// const path = require('path');
 
 const secret = crypto.randomBytes(64).toString('hex');
 
@@ -25,16 +25,15 @@ app.use(
 );
 
 
-app.use(express.static('.'));
+// app.use(express.static('.'));
 
-// Serve the index.html for any route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// // Serve the index.html for any route
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 
 app.get('/pomodoropal/api/hello',(req,res)=>{
-  console.log("Hello World");
   res.send("Hello World");
 });
 
@@ -49,8 +48,6 @@ db.authenticate()
   .catch((err) => {
     console.error('Error connecting to the database:', err);
 });
-
-
 
 
 app.use('/pomodoropal/api/user', userRoutes);
