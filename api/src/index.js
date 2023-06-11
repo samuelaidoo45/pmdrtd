@@ -46,11 +46,11 @@ app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static('/home/tivateo2/app.tivateonline.com/pomodoropal/'));
 
 // Serve the index.html for any route
 app.get('*', (req, res) => {
-  res.sendFile(path.join('/home/tivateo2/app.tivateonline.com/pomodoropal/', 'build', 'index.html'));
+  res.sendFile(path.join('/home/tivateo2/app.tivateonline.com/pomodoropal/', 'index.html'));
 });
 
 const port = 5000; // Replace with your desired port number
