@@ -16,6 +16,7 @@ const App = require('./App');
 
 const app = express();
 
+
 app.get('*', (req, res) => {
   const isServer = true;
 
@@ -34,7 +35,7 @@ app.get('*', (req, res) => {
       </body>
     </html>
   `;
-  
+
 
   // Send the rendered HTML as the response
   res.send(template);
