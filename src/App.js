@@ -7,7 +7,7 @@ import React from 'react';
 
 function App() {
 
-  const Router = true ? StaticRouter : BrowserRouter;
+  const Router = StaticRouter ;
 
   return (
     <div className="app">
