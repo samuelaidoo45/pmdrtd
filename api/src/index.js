@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Serve the index.html for any route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join('/home/tivateo2/app.tivateonline.com/pomodoropal/', 'build', 'index.html'));
 });
 
 const port = 5000; // Replace with your desired port number
