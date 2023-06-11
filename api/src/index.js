@@ -24,6 +24,15 @@ app.use(
   })
 );
 
+
+app.use(express.static('.'));
+
+// Serve the index.html for any route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 app.get('/pomodoropal/api/hello',(req,res)=>{
   console.log("Hello World");
   res.send("Hello World");
