@@ -1,13 +1,17 @@
 // import Sidebar from "../../components/sidebar/Sidebar";
 import React from 'react';
-import Main from "../../components/main/Main";
+// import Main from "../../components/main/Main";
+import Layout from "../../components/layout/Layout";
 import "./home.css";
 
 const Home = () => {
   return (
     <div className="home">
       <div className="homeContainer">
-          <Main />
+          {/* <Main /> */}
+          <Layout >
+
+          </Layout>
       </div>
 
     </div>
