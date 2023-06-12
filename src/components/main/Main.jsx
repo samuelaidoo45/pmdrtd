@@ -150,10 +150,10 @@ const handleDelete = (itemId) => {
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
           <Link className={MainStyle.li} to='#'>Dashboard</Link>
-          <Link className={MainStyle.li} to='#'>To-Do Items</Link>
+          <Link className={MainStyle.li} to='#'>Tasks</Link>
           <Link className={MainStyle.li} to='#'>Pomodoro Timer</Link>
-          <Link className={MainStyle.li} to='#'>Settings</Link>
-          <Link className={MainStyle.li} to='#'>About</Link>
+          <Link className={MainStyle.li} to='#'>Logout</Link>
+          {/* <Link className={MainStyle.li} to='#'>About</Link> */}
         </ul>
       </nav>
 
