@@ -1,4 +1,3 @@
-// import Sidebar from "../../components/sidebar/Sidebar";
 import React from 'react';
 // import Main from "../../components/main/Main";
 import Layout from "../../components/layout/Layout";
