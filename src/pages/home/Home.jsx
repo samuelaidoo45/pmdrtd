@@ -8,7 +8,9 @@ const Home = () => {
     <div className="home">
       <div className="homeContainer">
           {/* <Main /> */}
-          {/* <Layout  /> */}
+          <Layout>
+
+          </Layout>
       </div>
 
     </div>
