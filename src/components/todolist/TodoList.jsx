@@ -3,8 +3,6 @@ import MainStyle from './TodoList.module.css';
 
 const TodoList = ({ data, onDelete }) => {
 
-
-
   return (
     <ul>
       {data.map(item => (
