@@ -9,16 +9,16 @@ const Layout = ({ children }) => {
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
           <li className={MainStyle.li}>
-            <Link to='#'>Dashboard</Link>
+            <Link to='/dashboard'>Dashboard</Link>
           </li>
           <li className={MainStyle.li}>
-            <Link to='#'>Tasks</Link>
+            <Link to='/tasks'>Tasks</Link>
           </li>
           <li className={MainStyle.li}>
-            <Link to='#'>Pomodoro Timer</Link>
+            <Link to='/timer'>Pomodoro Timer</Link>
           </li>
           <li className={MainStyle.li}>
-            <Link to='#'>Logout</Link>
+            <Link to='logout'>Logout</Link>
           </li>
         </ul>
       </nav>
