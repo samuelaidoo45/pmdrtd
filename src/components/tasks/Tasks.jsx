@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import MainStyle from './Home.module.css';
+import MainStyle from './Tasks.module.css';
 import TodoList from "../todolist/TodoList";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
