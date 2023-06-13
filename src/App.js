@@ -2,7 +2,7 @@ import Home from "./pages/home/Home";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Login from "./pages/login/Login";
 import Tasks from "./pages/task/Tasks";
-import Timer from "./pages/timer/Timmer";
+import Timer from "./pages/timer/Timer";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
