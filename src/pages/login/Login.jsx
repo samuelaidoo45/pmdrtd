@@ -22,9 +22,9 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    setUrl(baseUrl+'/user/login');
+    // setUrl(baseUrl+'/user/login');
 
-    fetch(url, {
+    fetch(baseUrl+'/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
