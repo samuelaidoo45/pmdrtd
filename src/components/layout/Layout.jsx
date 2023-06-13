@@ -1,7 +1,7 @@
 import React from 'react';
 import MainStyle from './Layout.module.css';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 const Layout = ({ children }) => {
