@@ -6,7 +6,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import { toast } from 'react-toastify';
 
 
-function Home() {
+function TasksPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -223,4 +223,4 @@ const handleDelete = (itemId) => {
     </>
   );
 }
-export default Home;
+export default TasksPage;

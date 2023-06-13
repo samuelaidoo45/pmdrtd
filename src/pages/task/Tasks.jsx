@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../../components/layout/Layout";
-import Tasks from "../../components/tasks/Tasks";
+import TasksPage from "../../components/tasks/Tasks";
 
 
 
@@ -9,7 +9,7 @@ const Tasks = () => {
     <div className="home">
       <div className="homeContainer">
           <Layout>
-            <Tasks />
+            <TasksPage />
           </Layout>
       </div>
     </div>
