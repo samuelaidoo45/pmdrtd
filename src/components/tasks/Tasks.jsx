@@ -146,7 +146,7 @@ const handleDelete = (itemId) => {
     <>
       
 
-        <h1 className={MainStyle.h1}>Tasks List</h1>
+        <h1 className={MainStyle.h1}>Tasks</h1>
         <form className={MainStyle.form}>
           <label htmlFor="filter">Filter by Status:</label>
           <select className={MainStyle.select} id="filter">
