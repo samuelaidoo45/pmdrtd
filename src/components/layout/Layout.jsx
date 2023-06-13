@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
             <Link to='/dashboard'>Dashboard</Link>
           </li>
           <li className={MainStyle.li}>
-            <Link to='/tasks'>Tasks</Link>
+            <Link to='/task'>Tasks</Link>
           </li>
           <li className={MainStyle.li}>
             <Link to='/timer'>Pomodoro Timer</Link>
