@@ -1,6 +1,8 @@
 import Home from "./pages/home/Home";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Login from "./pages/login/Login";
+import Tasks from "./pages/task/Tasks";
+import Timer from "./pages/timer/Timmer";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,8 +19,8 @@ function App() {
             <Route index element={<LandingPage />} />
             <Route path="login" element={<Login />} />
             <Route path="dashboard" element={<Home />} />
-            <Route path="task" element={<Home />} />
-            <Route path="timer" element={<Home />} />
+            <Route path="task" element={<Tasks />} />
+            <Route path="timer" element={<Timer />} />
             <Route path="logout" element={<Login />} />
           </Route>
         </Routes>

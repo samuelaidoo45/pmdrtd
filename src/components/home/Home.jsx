@@ -6,7 +6,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import { toast } from 'react-toastify';
 
 
-
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState('');

@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
             <Link to='/timer'>Pomodoro Timer</Link>
           </li>
           <li className={MainStyle.li}>
-            <Link to='/logout'>Logout</Link>
+            <Link to='/login'>Logout</Link>
           </li>
         </ul>
       </nav>
