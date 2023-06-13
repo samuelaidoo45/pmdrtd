@@ -1,11 +1,14 @@
 import React from 'react';
 import MainStyle from './Layout.module.css';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Layout = ({ children }) => {
 
   return (
     <>
+      <ToastContainer />
       <nav className={MainStyle.nav}>
         <ul className={MainStyle.ul}>
           <li className={MainStyle.li}>
