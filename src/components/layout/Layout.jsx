@@ -17,9 +17,9 @@ const Layout = ({ children }) => {
           <li className={MainStyle.li}>
             <Link to='/task'>Tasks</Link>
           </li>
-          <li className={MainStyle.li}>
+          {/* <li className={MainStyle.li}>
             <Link to='/timer'>Pomodoro Timer</Link>
-          </li>
+          </li> */}
           <li className={MainStyle.li}>
             <Link to='/login'>Logout</Link>
           </li>
