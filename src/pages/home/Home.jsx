@@ -1,6 +1,6 @@
 import React from 'react';
-// import Main from "../../components/main/Main";
-import Layout from "../../components/tmplate/Layout";
+import Main from "../../components/main/Main";
+// import Layout from "../../components/layout/Layout";
 import "./home.css";
 
 const Home = () => {
@@ -8,9 +8,7 @@ const Home = () => {
     <div className="home">
       <div className="homeContainer">
           {/* <Main /> */}
-          <Layout >
-
-          </Layout>
+          {/* <Layout  /> */}
       </div>
 
     </div>
