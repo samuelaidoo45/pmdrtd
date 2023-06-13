@@ -14,7 +14,6 @@ function TasksPage() {
   const [tasks, setTasks] = useState([]); // State to store the tasks from the backend
 
 
-
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -29,9 +28,9 @@ function TasksPage() {
   
     e.preventDefault();
 
-    setUrl(baseUrl+'/todo/createTasks');
+    // setUrl(baseUrl+'/todo/createTasks');
 
-    fetch(url, {
+    fetch(baseUrl+'/todo/createTasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
