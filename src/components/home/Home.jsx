@@ -3,7 +3,7 @@ import MainStyle from './Home.module.css';
 import TodoList from "../todolist/TodoList";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import toast from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 
