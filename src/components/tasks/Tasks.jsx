@@ -158,7 +158,7 @@ const handleDelete = (itemId) => {
         </form>
 
         <button className={`${MainStyle.button} ${MainStyle.createNewItem}`} onClick={openModal}>
-          Create New Item
+          Create New Task
         </button>
 
         {isModalOpen && (
