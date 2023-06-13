@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from "../../components/home/Home";
+import Dashboard from "../../components/home/Home";
 import Layout from "../../components/layout/Layout";
 
 import "./home.css";
@@ -9,7 +9,7 @@ const Home = () => {
     <div className="home">
       <div className="homeContainer">
           <Layout>
-            <Home />
+            <Dashboard />
           </Layout>
       </div>
     </div>
