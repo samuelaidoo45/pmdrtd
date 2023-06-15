@@ -1,9 +1,13 @@
 const TodoItem = require('../models/ToDoItem');
 
 async function createTasks(req, res) {
-    const { title, description } = req.body;
-    console.log(req.body);
-    const newTask = new TodoItem({ title, description });
+    const { title, description,  } = req.body;
+    const workTime = req.body.workTime ;
+    const breakTime = req.body.breakTime ;
+
+    const UserId = req.session.userId;
+
+    const newTask = new TodoItem({ title, description, status: 'created', pomodoroCount: 0, workTime, breakTime, UserId});
 
     try {
         await newTask.save();
@@ -15,7 +19,9 @@ async function createTasks(req, res) {
 
 async function getTasks(req, res) {
     try {
-        const tasks = await TodoItem.findAll();
+
+        const tasks = await TodoItem.findAll({ where: { UserId: req.session.userId } });
+
         return res.status(200).json({ message: 'Tasks fetched successfully', data: tasks });
     } catch (error) {
         return res.status(500).json({ message: 'Something went wrong', error });

@@ -25,6 +25,14 @@ const ToDoItem = db.define('ToDoItem', {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },
+  workTime: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+  },
+  breakTime: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+  },
   UserId: {
     type: DataTypes.INTEGER,
     references: {
