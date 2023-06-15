@@ -19,7 +19,6 @@ async function createTasks(req, res) {
 
 async function getTasks(req, res) {
     try {
-
         const tasks = await TodoItem.findAll({ where: { UserId: req.session.userId } });
 
         return res.status(200).json({ message: 'Tasks fetched successfully', data: tasks });
