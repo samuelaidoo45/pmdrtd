@@ -10,6 +10,17 @@ const path = require('path');
 
 const secret = crypto.randomBytes(64).toString('hex');
 
+db.authenticate()
+  .then(() => {
+    console.log('Database connected');
+    return db.sync(); // Sync models with the database
+  })
+  .then(() => {
+    console.log('Models synced');
+  })
+  .catch((err) => {
+    console.error('Error connecting to the database:', err);
+});
 
 const app = express();
 
@@ -30,17 +41,7 @@ app.get('/pomodoropal/api/hello',(req,res)=>{
 
 // Connect to the database
 
-db.authenticate()
-  .then(() => {
-    console.log('Database connected');
-    return db.sync(); // Sync models with the database
-  })
-  .then(() => {
-    console.log('Models synced');
-  })
-  .catch((err) => {
-    console.error('Error connecting to the database:', err);
-});
+
 
 
 app.use('/pomodoropal/api/user', userRoutes);
