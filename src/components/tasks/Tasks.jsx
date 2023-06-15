@@ -197,7 +197,7 @@ const handleDelete = (itemId) => {
 
                   <br></br>
 
-                  <label htmlFor="task">Work Time:</label>
+                  <label htmlFor="task">Work Time(minute):</label>
                   <input className={MainStyle.select}
                     type="number"
                     id="timer"
@@ -207,7 +207,7 @@ const handleDelete = (itemId) => {
                   />
                   <br></br>
 
-                  <label htmlFor="task">Break Time:</label>
+                  <label htmlFor="task">Break Time(minute):</label>
                   <input className={MainStyle.select}
                     type="number"
                     id="breakTime"
