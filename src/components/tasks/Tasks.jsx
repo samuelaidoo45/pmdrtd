@@ -197,7 +197,7 @@ const handleDelete = (itemId) => {
 
                   <br></br>
 
-                  <label htmlFor="task">Timer:</label>
+                  <label htmlFor="task">Work Time:</label>
                   <input className={MainStyle.select}
                     type="number"
                     id="timer"
@@ -215,6 +215,7 @@ const handleDelete = (itemId) => {
                     onChange={handleBreakTimeChange}
                     placeholder="5"
                   />
+
                   <div className={MainStyle.buttonContainer}>
 
                     <button className={MainStyle.button} type="submit">Create</button>
