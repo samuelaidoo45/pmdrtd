@@ -12,6 +12,17 @@ function TasksPage() {
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
   const [tasks, setTasks] = useState([]); // State to store the tasks from the backend
+  const [timer, setTimer] = useState(0);
+  const [breakTime, setBreakTime] = useState(0);
+
+
+  const handleBreakTimeChange = (e) => {
+    setBreakTime(e.target.value);
+  };
+
+  const handleTimerChange = (e) => {
+    setTimer(e.target.value);
+  };
 
 
   const handleTitleChange = (e) => {
@@ -185,6 +196,25 @@ const handleDelete = (itemId) => {
                   ></textarea>
 
                   <br></br>
+
+                  <label htmlFor="task">Timer:</label>
+                  <input className={MainStyle.select}
+                    type="number"
+                    id="timer"
+                    value={timer}
+                    onChange={handleTimerChange}
+                    placeholder="25"
+                  />
+                  <br></br>
+
+                  <label htmlFor="task">Break Time:</label>
+                  <input className={MainStyle.select}
+                    type="number"
+                    id="breakTime"
+                    value={breakTime}
+                    onChange={handleBreakTimeChange}
+                    placeholder="5"
+                  />
                   <div className={MainStyle.buttonContainer}>
 
                     <button className={MainStyle.button} type="submit">Create</button>
