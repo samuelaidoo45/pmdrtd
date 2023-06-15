@@ -28,6 +28,9 @@ app.get('/pomodoropal/api/hello',(req,res)=>{
   res.send("Hello World");
 });
 
+// Connect to the database
+
+db.sync({ force: true }) // Use this to reset the database
 db.authenticate()
   .then(() => {
     console.log('Database connected');
