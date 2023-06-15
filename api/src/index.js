@@ -30,18 +30,18 @@ app.get('/pomodoropal/api/hello',(req,res)=>{
 
 // Connect to the database
 
-db.sync({ force: true }); // Use this to reset the database
 db.authenticate()
   .then(() => {
     console.log('Database connected');
-    return db.sync(); // Sync models with the database
+    return db.sync({ alter: true }); // Sync models with the database and update existing tables
   })
   .then(() => {
     console.log('Models synced');
   })
   .catch((err) => {
     console.error('Error connecting to the database:', err);
-});
+  });
+
 
 
 app.use('/pomodoropal/api/user', userRoutes);
