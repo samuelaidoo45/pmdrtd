@@ -12,7 +12,7 @@ function TasksPage() {
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
   const [tasks, setTasks] = useState([]); // State to store the tasks from the backend
-  const [timer, setTimer] = useState(0);
+  const [workTime, setWorkTime] = useState(0);
   const [breakTime, setBreakTime] = useState(0);
 
 
@@ -20,8 +20,8 @@ function TasksPage() {
     setBreakTime(e.target.value);
   };
 
-  const handleTimerChange = (e) => {
-    setTimer(e.target.value);
+  const handleWorkTimeChange = (e) => {
+    setWorkTime(e.target.value);
   };
 
 
@@ -46,7 +46,7 @@ function TasksPage() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title, description }),
+      body: JSON.stringify({ title, description, workTime, breakTime }),
     })
       .then((response) => {
         if (response.ok) {
@@ -200,9 +200,9 @@ const handleDelete = (itemId) => {
                   <label htmlFor="task">Work Time(minute):</label>
                   <input className={MainStyle.select}
                     type="number"
-                    id="timer"
-                    value={timer}
-                    onChange={handleTimerChange}
+                    id="workTime"
+                    value={workTime}
+                    onChange={handleWorkTimeChange}
                     placeholder="25"
                   />
                   <br></br>
