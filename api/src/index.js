@@ -37,12 +37,28 @@ app.use(
 
 // auth middleware for pomodoropal/dashboard
 app.use('/pomodoropal/dashboard', (req, res, next) => {
-   return "Hello world";
   if (!req.session.userId) {
-    return res.status(401).json({ message: 'Not logged in' });
+    // Redirect to the login page
+    return res.redirect('/pomodoropal/login');
   }
   next();
 });
+
+app.use('/pomodoropal/task', (req, res, next) => {
+  if (!req.session.userId) {
+    // Redirect to the login page
+    return res.redirect('/pomodoropal/login');
+  }
+  next();
+});
+
+// app.use('/pomodoropal/dashboard', (req, res, next) => {
+//   if (!req.session.userId) {
+//     // Redirect to the login page
+//     return res.redirect('/pomodoropal/login');
+//   }
+//   next();
+// });
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
