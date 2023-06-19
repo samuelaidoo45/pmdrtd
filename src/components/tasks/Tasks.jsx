@@ -55,9 +55,8 @@ function TasksPage() {
         }
       }).then((data)=>{
         //reverse the array
-        const reversedTasks = data.data.reverse();
-
-        setTasks(prevTasks => [...prevTasks, ...reversedTasks]);
+        
+        setTasks(prevTasks => [...prevTasks, data.data].reverse());
 
         toast.success('Task added successfully');
 
