@@ -54,9 +54,11 @@ app.use('/pomodoropal/task', (req, res, next) => {
 
 app.use('/pomodoropal/logout', (req, res, next) => {
     //clear session
-  req.session.destroy();
+  if(req.session.destroy()){
+    return res.redirect('/pomodoropal/login');
+  }
   // Redirect to the login page
-  return res.redirect('/pomodoropal/login');
+  next();
 });
 
 app.use('/pomodoropal/api/user', userRoutes);
