@@ -35,12 +35,6 @@ app.use(
   })
 );
 
-app.get('/pomodoropal/api/hello',(req,res)=>{
-  res.send("Hello World");
-});
-
-// Connect to the database
-
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);

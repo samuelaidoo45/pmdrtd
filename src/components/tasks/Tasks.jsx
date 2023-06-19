@@ -55,9 +55,10 @@ function TasksPage() {
           throw new Error('Login failed');
         }
       }).then((data)=>{
-        // console.log(data);
-        //setTasks(data.data);
-        setTasks(prevTasks => [...prevTasks, data.data]);
+        //reverse the array
+        const reversedData = data.data.reverse();
+        setTasks(prevTasks => [...prevTasks, reversedData]);
+
 
         toast.success('Task added successfully');
 
@@ -95,10 +96,10 @@ function TasksPage() {
           throw new Error('Oops and error occured');
         }
       }).then((data)=>{
-        console.log(data);
         //display data on the page
-        setTasks(data.data);
-        
+        //reverse the array
+        const reversedData = data.data.reverse();
+        setTasks(reversedData);
 
       }).catch((error) => {
         // Display an error message to the user
