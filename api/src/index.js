@@ -53,13 +53,16 @@ app.use('/pomodoropal/task', (req, res, next) => {
 });
 
 app.use('/pomodoropal/logout', (req, res, next) => {
-    //clear session
-  if(req.session.destroy()){
-    return res.redirect('/pomodoropal/login');
-  }
-  // Redirect to the login page
-  next();
+  // Clear session
+  req.session.destroy((err) => {
+    if (err) {
+      res.redirect('/pomodoropal/login');
+    }
+    // Redirect to the login page
+    res.redirect('/pomodoropal/login');
+  });
 });
+
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
