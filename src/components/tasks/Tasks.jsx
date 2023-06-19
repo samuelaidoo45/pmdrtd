@@ -47,8 +47,7 @@ function TasksPage() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ title, description, workTime, breakTime }),
-    })
-      .then((response) => {
+    }).then((response) => {
         if (response.ok) {
           return response.json();
         } else {
@@ -56,7 +55,9 @@ function TasksPage() {
         }
       }).then((data)=>{
         //reverse the array
-        setTasks(prevTasks => [...prevTasks, data.data.reverse()]);
+        const reversedTasks = data.data.reverse();
+
+        setTasks(prevTasks => [...prevTasks, ...reversedTasks]);
 
         toast.success('Task added successfully');
 
@@ -86,8 +87,7 @@ function TasksPage() {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
-      .then((response) => {
+    }).then((response) => {
         if (response.ok) {
           return response.json();
         } else {
@@ -96,7 +96,9 @@ function TasksPage() {
       }).then((data)=>{
         //display data on the page
         //reverse the array
-        setTasks(data.data.reverse());
+        const reversedTasks = data.data.reverse();
+
+        setTasks(reversedTasks);
 
       }).catch((error) => {
         // Display an error message to the user
