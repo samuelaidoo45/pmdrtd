@@ -35,6 +35,7 @@ app.use(
   })
 );
 
+
 const authMiddleware = require('./middlewares/authMiddleware');
 
 app.use('/pomodoropal/api/user', userRoutes);
