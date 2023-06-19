@@ -52,13 +52,12 @@ app.use('/pomodoropal/task', (req, res, next) => {
   next();
 });
 
-// app.use('/pomodoropal/dashboard', (req, res, next) => {
-//   if (!req.session.userId) {
-//     // Redirect to the login page
-//     return res.redirect('/pomodoropal/login');
-//   }
-//   next();
-// });
+app.use('/pomodoropal/logout', (req, res, next) => {
+    //clear session
+  req.session.destroy();
+  // Redirect to the login page
+  return res.redirect('/pomodoropal/login');
+});
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
