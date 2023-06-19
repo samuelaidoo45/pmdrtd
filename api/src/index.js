@@ -35,6 +35,14 @@ app.use(
   })
 );
 
+// auth middleware
+app.use((req, res, next) => {
+  if (req.session.userId) {
+    next();
+  } else {
+    res.status(401).json({ message: 'Unauthorized' });
+  }
+});
 
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
