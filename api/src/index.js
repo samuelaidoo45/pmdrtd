@@ -35,6 +35,14 @@ app.use(
   })
 );
 
+// auth middleware for pomodoropal/dashboard
+app.use('/pomodoropal/dashboard', (req, res, next) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ message: 'Not logged in' });
+  }
+  next();
+});
+
 app.use('/pomodoropal/api/user', userRoutes);
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
