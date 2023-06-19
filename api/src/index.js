@@ -41,7 +41,7 @@ app.use('/pomodoropal/dashboard', (req, res, next) => {
     // Redirect to the login page
     return res.redirect('/pomodoropal/login');
   }
-  next();
+  
 });
 
 app.use('/pomodoropal/task', (req, res, next) => {
@@ -49,7 +49,6 @@ app.use('/pomodoropal/task', (req, res, next) => {
     // Redirect to the login page
     return res.redirect('/pomodoropal/login');
   }
-  next();
 });
 
 app.use('/pomodoropal/logout', (req, res, next) => {
