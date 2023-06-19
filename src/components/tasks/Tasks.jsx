@@ -56,9 +56,7 @@ function TasksPage() {
         }
       }).then((data)=>{
         //reverse the array
-        const reversedData = data.data.reverse();
-        setTasks(prevTasks => [...prevTasks, reversedData]);
-
+        setTasks(prevTasks => [...prevTasks, data.data.reverse()]);
 
         toast.success('Task added successfully');
 
@@ -98,8 +96,7 @@ function TasksPage() {
       }).then((data)=>{
         //display data on the page
         //reverse the array
-        const reversedData = data.data.reverse();
-        setTasks(reversedData);
+        setTasks(data.data.reverse());
 
       }).catch((error) => {
         // Display an error message to the user
