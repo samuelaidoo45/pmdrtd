@@ -37,6 +37,7 @@ app.use(
 
 // auth middleware for pomodoropal/dashboard
 app.use('/pomodoropal/dashboard', (req, res, next) => {
+   return "Hello world";
   if (!req.session.userId) {
     return res.status(401).json({ message: 'Not logged in' });
   }
