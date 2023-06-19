@@ -35,13 +35,8 @@ app.use(
   })
 );
 
-
-const authMiddleware = require('./middlewares/authMiddleware');
-
 app.use('/pomodoropal/api/user', userRoutes);
-// app.use('/pomodoropal/api/todo',toDoItemRoutes);
-app.use('/pomodoropal/api/todo', authMiddleware, toDoItemRoutes);
-
+app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
 app.use(express.static('/home/tivateo2/app.tivateonline.com/pomodoropal/'));
 
