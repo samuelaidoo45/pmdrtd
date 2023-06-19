@@ -35,17 +35,11 @@ app.use(
   })
 );
 
-// auth middleware
-app.use((req, res, next) => {
-  if (req.session.userId) {
-    next();
-  } else {
-    res.status(401).json({ message: 'Unauthorized' });
-  }
-});
+const authMiddleware = require('./middlewares/authMiddleware');
 
 app.use('/pomodoropal/api/user', userRoutes);
-app.use('/pomodoropal/api/todo',toDoItemRoutes);
+// app.use('/pomodoropal/api/todo',toDoItemRoutes);
+app.use('/pomodoropal/api/todo', authMiddleware, toDoItemRoutes);
 
 
 app.use(express.static('/home/tivateo2/app.tivateonline.com/pomodoropal/'));
