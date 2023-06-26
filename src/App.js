@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home";
+import Dashboard from "./pages/dashboard/Dashboard";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Login from "./pages/login/Login";
 import Tasks from "./pages/task/Tasks";
@@ -18,7 +18,7 @@ function App() {
           <Route path="/">
             <Route index element={<LandingPage />} />
             <Route path="login" element={<Login />} />
-            <Route path="dashboard" element={<Home />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="task" element={<Tasks />} />
             <Route path="timer" element={<Timer />} />
             <Route path="logout" element={<Login />} />

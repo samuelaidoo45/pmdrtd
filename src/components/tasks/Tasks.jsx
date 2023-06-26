@@ -153,8 +153,6 @@ const handleDelete = (itemId) => {
 
   return (
     <>
-      
-
         <h1 className={MainStyle.h1}>Tasks</h1>
         <form className={MainStyle.form}>
           <label htmlFor="filter">Filter by Status:</label>
