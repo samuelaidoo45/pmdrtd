@@ -24,6 +24,11 @@
     font-size: 18px;
     margin-bottom: 10px;
   }
+
+  /* center text */
+  .metrics{
+    text-align: center;
+  }
   
   /* Add additional CSS styles for your dashboard here */
   

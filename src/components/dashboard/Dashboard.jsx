@@ -8,19 +8,19 @@ const Dashboard = () => {
       <div className={styles.cardContainer}>
         <div className={styles.card}>
           <h2>All Tasks</h2>
-          {/* Add content for all tasks */}
+          <span className={styles.metrics}>10k</span>
         </div>
         <div className={styles.card}>
           <h2>Completed Tasks</h2>
-          {/* Add content for completed tasks */}
+          <span className={styles.metrics}>5k</span>
         </div>
         <div className={styles.card}>
           <h2>In Progress Tasks</h2>
-          {/* Add content for in progress tasks */}
+          <span className={styles.metrics}>2k</span>
         </div>
         <div className={styles.card}>
           <h2>Not Started Tasks</h2>
-          {/* Add content for not started tasks */}
+          <span className={styles.metrics}>3k</span>
         </div>
       </div>
     </div>
