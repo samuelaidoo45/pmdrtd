@@ -22,6 +22,8 @@ db.authenticate()
     console.error('Error connecting to the database:', err);
 });
 
+
+
 const app = express();
 
 //middlewares
