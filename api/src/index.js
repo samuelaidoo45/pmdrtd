@@ -23,7 +23,6 @@ db.authenticate()
 });
 
 
-
 const app = express();
 
 //middlewares

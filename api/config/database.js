@@ -12,7 +12,7 @@
 const { Sequelize } = require('sequelize');
 
 module.exports = new Sequelize('tivateo2_pomodoro', 'tivateo2_pomodo', 'ab#%BE?5c,Uc', {
-  host: '104.243.34.13',
+  host: 'tivateonline.com',
   port: '3306',
   dialect: 'mysql',
 });
