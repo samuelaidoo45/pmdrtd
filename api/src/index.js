@@ -66,6 +66,7 @@ app.use('/pomodoropal/logout', (req, res, next) => {
 
 
 app.use('/pomodoropal/api/user', userRoutes);
+
 app.use('/pomodoropal/api/todo',toDoItemRoutes);
 
 app.use(express.static('/home/tivateo2/app.tivateonline.com/pomodoropal/'));
